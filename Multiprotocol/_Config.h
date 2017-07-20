@@ -98,41 +98,41 @@
 //The protocols below need an A7105 to be installed
 #define	FLYSKY_A7105_INO
 #define	HUBSAN_A7105_INO
-#define	AFHDS2A_A7105_INO
+//#define	AFHDS2A_A7105_INO
 
 //The protocols below need a CYRF6936 to be installed
-#define	DEVO_CYRF6936_INO
+//#define	DEVO_CYRF6936_INO
 #define	DSM_CYRF6936_INO
-#define	J6PRO_CYRF6936_INO
-#define	WK2x01_CYRF6936_INO
+//#define	J6PRO_CYRF6936_INO
+//#define	WK2x01_CYRF6936_INO
 
 //The protocols below need a CC2500 to be installed
-#define	FRSKYV_CC2500_INO
+//#define	FRSKYV_CC2500_INO
 #define	FRSKYD_CC2500_INO
-#define	FRSKYX_CC2500_INO
-#define	SFHSS_CC2500_INO
+//#define	FRSKYX_CC2500_INO
+//#define	SFHSS_CC2500_INO
 
 //The protocols below need a NRF24L01 to be installed
 #define	BAYANG_NRF24L01_INO
 #define	CG023_NRF24L01_INO
-#define	CX10_NRF24L01_INO		// Include Q2X2 protocol
-#define	ESKY_NRF24L01_INO
+//#define	CX10_NRF24L01_INO		// Include Q2X2 protocol
+//#define	ESKY_NRF24L01_INO
 #define	HISKY_NRF24L01_INO
 #define	KN_NRF24L01_INO
-#define	SLT_NRF24L01_INO
-#define	SYMAX_NRF24L01_INO
-#define	V2X2_NRF24L01_INO
-#define	YD717_NRF24L01_INO
-#define	MT99XX_NRF24L01_INO
+//#define	SLT_NRF24L01_INO
+//#define	SYMAX_NRF24L01_INO
+//#define	V2X2_NRF24L01_INO
+//#define	YD717_NRF24L01_INO
+//#define	MT99XX_NRF24L01_INO
 #define	MJXQ_NRF24L01_INO
-#define	SHENQI_NRF24L01_INO
-#define	FY326_NRF24L01_INO
+//#define	SHENQI_NRF24L01_INO
+//#define	FY326_NRF24L01_INO
 #define	FQ777_NRF24L01_INO
-#define	ASSAN_NRF24L01_INO
-#define	HONTAI_NRF24L01_INO
-#define Q303_NRF24L01_INO
-#define GW008_NRF24L01_INO
-#define DM002_NRF24L01_INO
+//#define	ASSAN_NRF24L01_INO
+//#define	HONTAI_NRF24L01_INO
+//#define Q303_NRF24L01_INO
+//#define GW008_NRF24L01_INO
+//#define DM002_NRF24L01_INO
 
 /**************************/
 /*** TELEMETRY SETTINGS ***/
@@ -140,7 +140,7 @@
 //In this section you can configure the telemetry.
 
 //If you do not plan using the telemetry comment this global setting using "//" and skip to the next section.
-#define TELEMETRY
+//#define TELEMETRY
 
 //Comment to invert the polarity of the output telemetry serial signal.
 //This function takes quite some flash space and processor power on an atmega.
@@ -176,7 +176,7 @@
 //This is available natively for ER9X and ERSKY9X. It is available for OpenTX on Taranis with a special version.
 
 //If you do not plan to use the Serial mode comment this line using "//" to save Flash space
-#define ENABLE_SERIAL
+//#define ENABLE_SERIAL
 
 
 /*************************/
@@ -216,7 +216,7 @@
 #define MIN_PPM_CHANNELS 4
 // The line below is used to set the maximum number of channels which the module should work with. Any channels received above this number are discarded.
 // The default value is 16 to receive all possible channels but you might want to filter some "bad" channels from the PPM frame like the ones above 6 on the Walkera PL0811.
-#define MAX_PPM_CHANNELS 16
+#define MAX_PPM_CHANNELS 10
 
 //The table below indicates which protocol to run when a specific position on the dial has been selected.
 //All fields and values are explained below. Everything is configurable from here like in the Serial mode.
@@ -229,15 +229,15 @@ const PPM_Parameters PPM_prot[15]=	{
 /*	4	*/	{MODE_HISKY	,	Hisky		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
 /*	5	*/	{MODE_V2X2	,	0			,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
 /*	6	*/	{MODE_DSM	,	DSMX_11		,	0	,	P_HIGH	,	NO_AUTOBIND	,	6		},	// option=number of channels
-/*	7	*/	{MODE_DSM	,	DSM2_22		,	0	,	P_HIGH	,	NO_AUTOBIND	,	6		},
-/*	8	*/	{MODE_YD717	,	YD717		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
+/*	7	*/	{MODE_MJXQ	,	X600		,	2	,	P_HIGH	,	NO_AUTOBIND	,	6		},
+/*	8	*/	{MODE_MJXQ	,	X600		,	1	,	P_HIGH	,	NO_AUTOBIND	,	0		},
 /*	9	*/	{MODE_KN	,	WLTOYS		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
-/*	10	*/	{MODE_SYMAX	,	SYMAX		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
-/*	11	*/	{MODE_SLT	,	0			,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
-/*	12	*/	{MODE_CX10	,	CX10_BLUE	,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
-/*	13	*/	{MODE_CG023	,	CG023		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
+/*	10	*/	{MODE_CG023	,	H8_3D		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
+/*	11	*/	{MODE_CG023	,	CG023		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
+/*	12	*/	{MODE_MJXQ	,	X600		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
+/*	13	*/	{MODE_BAYANG,	H8S3D		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
 /*	14	*/	{MODE_BAYANG,	BAYANG		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		},
-/*	15	*/	{MODE_SYMAX	,	SYMAX5C		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		}
+/*	15	*/	{MODE_FQ777	,	0			,	0	,	P_HIGH	,	NO_AUTOBIND	,	0		}
 };
 /* Available protocols and associated sub protocols to pick and choose from
 	MODE_FLYSKY
